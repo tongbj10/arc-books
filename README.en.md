@@ -1,6 +1,7 @@
 # arc-books
 
 #### Briefly introduce the directory structure main
+```
 ∝ - App/- App Code Catalog
 │∝ -- Common/-- Some class beans with independent functions (DB, Log, Model, etc.)
 │∝ - Console/- Command line code directory (script directory)
@@ -30,6 +31,7 @@
 │└ - db.chp - Database Configuration
 ∝ - runtime/- temporary file directory (logs, uploaded files, file cache, etc.)
 └── composer.json
+```
 
 #### How to start a project, code testing and debugging
 Service startup Docker compose up
