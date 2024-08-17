@@ -1,6 +1,7 @@
 # arc-books
 
 #### 简单介绍下目录结构 main
+```
 ├── app/    ----- 应用代码目录
 │   ├── Common/            ----- 一些具有独立功能的 class bean （DB、Log、Model等）
 │   ├── Console/           ----- 命令行代码目录 （脚本目录）
@@ -30,6 +31,7 @@
 │   └── db.php                 ----- 数据库配置
 ├── runtime/               ----- 临时文件目录（日志、上传文件、文件缓存等）
 └── composer.json
+```
 
 #### 项目如何启动，代码测试调试
 服务启动 docker-compose up
