@@ -1,0 +1,55 @@
+version: "3.6"
+services:
+  books_server:
+    build:
+      context: ./docker/php
+    image: books_server
+    restart: always
+    container_name: books_server
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /Users/yhy/huomakeji/books/app/server/main:/var/www
+    environment:
+      - LANG=C.UTF-8
+    ports:
+      - "9282:18307"
+    networks:
+      books-network:
+        ipv4_address: 172.100.29.3
+    command: php bin/swoft rpc:start
+    tty: true
+
+  db:
+    image: mysql:latest
+    container_name: mysql-test
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: tbj-test
+      MYSQL_USER: tbj
+      MYSQL_PASSWORD: tbjtbj
+    ports:
+      - "3306:3306"
+    volumes:
+      - /Users/yhy/huomakeji/books/db_data:/var/lib/mysql
+    networks:
+      books-network:
+        ipv4_address: 172.100.29.112
+
+  redis:
+    image: redis:latest
+    container_name: redis-test
+    ports:
+      - "6379:6379"
+    volumes:
+      - /Users/yhy/huomakeji/books/redis_data:/data
+    networks:
+      books-network:
+        ipv4_address: 172.100.29.113
+
+networks:
+  books-network:
+    driver: bridge
+    name: books-network
+    ipam:
+      config:
+        - subnet: "172.100.29.0/24"

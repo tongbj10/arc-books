@@ -1,0 +1,33 @@
+{
+  "require": {
+      "php": ">7.1",
+      "ext-pdo": "*",
+      "ext-redis": "*",
+      "ext-json": "*",
+      "ext-simplexml": "*",
+      "ext-libxml": "*",
+      "ext-mbstring": "*",
+      "ext-curl": "*",
+      "swoft/db": "~2.0.0",
+      "swoft/redis": "~2.0.0",
+      "swoft/framework": "~2.0.0",
+      "swoft/task": "~2.0.0",
+      "swoft/rpc-server": "~2.0.0",
+      "swoft/consul": "~2.0.0",
+      "swoft/process": "~2.0.0",
+      "swoft/validator": "^2.0",
+      "swoft/devtool": "^2.0",
+      "swoft/crontab": "^2.0",
+      "php-amqplib/php-amqplib": "^3.1",
+      "php-curl-class/php-curl-class": "^9.4"
+  },
+  "require-dev": {
+      "swoft/swlib": "~2.0.0",
+      "swoft/swoole-ide-helper": "dev-master"
+  },
+  "autoload": {
+      "files": [
+          "app/Helper/Functions.php"
+      ]
+  }
+}
